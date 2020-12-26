@@ -661,7 +661,7 @@ instructions.each_with_index do |instruction, idx|
   if instruction.command == 'jmp'
     new_instruction = Instruction.new('nop', instruction.amount)
   elsif instruction.command == 'nop'
-    new_instruction = Instruction.new('nop', instruction.amount)
+    new_instruction = Instruction.new('jmp', instruction.amount)
   else
     next # we don't care
   end 
