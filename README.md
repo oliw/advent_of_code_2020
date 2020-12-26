@@ -1,6 +1,6 @@
-# Advent of Code 2020 Recap
+# 🎄 Advent of Code 2020 Recap 🎄
 
-This repository contains my solutions to the 2020 Advent of Code puzzles.
+This repository contains my ruby solutions to the 2020 Advent of Code puzzles.
 
 Advent of Code is a series of 25 questions (each with two parts) released one per day in the run up to Christmas Day. Participants are given unique puzzle inputs which means its hard to copy! Some people choose to do it competitively as a race, some choose to use a programming language they are unfamiliar with. I chose neither, and capitalized on my existing Ruby skillset, and just tried to complete each question on the day it was released.
 
