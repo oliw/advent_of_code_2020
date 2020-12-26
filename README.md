@@ -1,4 +1,4 @@
-# Advent of Code 2020
+# Advent of Code 2020 Recap
 
 This repository contains my solutions to the 2020 Advent of Code puzzles.
 
@@ -6,7 +6,7 @@ Advent of Code is a series of 25 questions (each with two parts) released one pe
 
 If I were to self critique I'd say my solutions *are* correct, and pretty concise thanks to my healthy grasp of the available methods on Ruby's Array and Hash classes. The questions on the two Sundays (intentional I'm sure) were the most time consuming. 
 
-You'll note, I was optimizing for "time until solution" and not "cleanliness" :)  
+Note: I was optimizing for "time until solution" and not "cleanliness" :)  
 
 ## Question 1: Summing Numbers
 Themes: Sorting, Arrays
@@ -228,4 +228,56 @@ Solution: Model Tile as a class with lots of helper methods like #all_varients, 
 Prompt: How many waves are in the final picture
 Solution: Convert the linked list of pieces into a 2D array of tiles, remove the borders, flip and rotate big picture until you find sea monsters, template match for the monsters and remove, then count the remaining # chars.
 
+## Question 21: Allergen Assessment
+Themes: Hash, Sudoku Solving
 
+### Part 1
+Prompt: Determine which ingredients cannot possibly contain any of the allergens in your list.
+Solution: Build a hash of allergens to lists of ingredients. Fill up the hash, but each time the new list for an allergen is the set intersection of the old list with the current list of ingredients for the current food. The allergen-free ingredients are the ones not in any of the values in the hash.
+
+### Part 2
+Prompt:  What is your canonical dangerous ingredient list?
+Solution: Similar to Question 16. Find the allergen in the hash with just one item in its list value. Match, then elimate that item from all the other lists, then repeat.
+
+## Question 22: Crab Combat
+Themes: Recursion, Cloning
+
+### Part 1
+Prompt: What is the winning player's score?
+Solution: Pretty trivial, follow the instructions carefully
+
+### Part 2
+Prompt: What is the winning player's score with the new rules?
+Solution: Recursion and carefully rule following!
+
+## Question 23: Crab Cups
+Themes: Linked Lists, a Hash pointing to Nodes on the List
+
+### Part 1
+Prompt: Using your labeling, simulate 100 moves. What are the labels on the cups after cup 1?
+Solution: Follow the instructions carefully, I used an array of cups and leveraged #index and #delete_at and #insert_at a lot.
+
+### Part 2
+Prompt: Same as Part 1 but 10 million moves instead of 100 and a longer line of cups.
+Solution: My array solution to Part 1 wasn't enough, calling #index multiple times per iteration is simply too slow. The trick here was to use a different data structure; specficially use a Linked List because you are only dealing with neighboring pieces. The extra special trick too was having a Hash mapping cup label numbers to their Linked List Nodes; making it really really quick to move to any point of the linked list based on the cup value. Super cool; I haven't solved a problem using a Linked List AND a HashMap in this way before.
+
+## Question 24: Lobby Layout
+Themes: Regex Interpretation, Hashes, Game of Life, Hexagon Coordinates
+
+### Part 1
+Prompt: After all of the instructions have been followed, how many tiles are left with the black side up?
+Solution: Very similar to Question 17. Maintain a hash with good logic for default entries.
+
+### Part 2
+Prompt: How many tiles will be black after 100 days?
+Solution: Similar to Part 1, take care to "delete" entries from the Hash that we know won't change between iterations.
+
+## Question 25: Combo Breaker
+Themes: Cryptography, Finding factors of numbers
+
+### Part 1
+Prompt: What encryption key is the handshake trying to establish?
+Solution: Exhaustive search counting upwards! Make sure not to restart every time otherwise it will take too long.
+
+### Part 2
+No Part 2!
