@@ -8,7 +8,7 @@ If I were to self critique I'd say my solutions *are* correct, and pretty concis
 
 Note: I was optimizing for "time until solution" and not "cleanliness" :)  
 
-## Question 1: Summing Numbers
+## Question 1: Report Repair
 Themes: Sorting, Arrays
 
 ### Part 1
@@ -19,7 +19,7 @@ Solution: Sort the list, then do an exhaustive pairwise analysis.
 Prompt: For a given list of numbers, find three that add up to 2020.
 Solution: Sort the list, take a number out, see if there are two numbers in the remaining list such that all three add to 2020.
 
-## Question 2: Validating Passports
+## Question 2: Password Philosophy
 Themes: Validation, Regex
 
 ### Part 1
@@ -30,7 +30,7 @@ Solution: Trivial once you've got a good Regex to describe the puzzle input
 Prompt: Ensure only one of the provided positions contains the provided letter
 Solution: Trivial once you've got a good Regex to describe the puzzle input
 
-## Question 3: Bobsledding down a 2D Array
+## Question 3: Toboggan Trajectory
 Themes: 2D Array Traversal with Wrapping
 
 ### Part 1
@@ -41,7 +41,7 @@ Solution: Trivial once you've mapped the input into a 2D Array.
 Prompt: Count the number of # seen in a 2D Array if you traverse in several directions
 Solution: Trivial if your method for Part 1 accepts arbitrary directions as an input
 
-## Question 4: Validating Passports
+## Question 4: Passport Processing
 Themes: Validation, Hash, Regex, Lambdas
 
 ### Part 1
@@ -52,7 +52,7 @@ Solution: For each passport, have a "Seen" Hash, that defaults to false for all 
 Prompt: Validate all the field entries according to custom validation rules per field type.
 Solution: Store the validation rules in a Hash of Lambas that maps the field type to a lambda that takes the raw value and returns true if its valid.
 
-## Question 5: Find your Seat on the Plane
+## Question 5: Binary Boarding
 Themes: Regex, Binary Partitioning, Recursion
 
 ### Part 1
@@ -63,7 +63,7 @@ Solution: Divide each input into column instructions and row instructions. Defin
 Prompt: Find your seat number
 Solution: This one, I eyeballed. I stored all the seat seat numbers in a Hash, then sorted the seen seat numbers, then printed to Std Out and chose the only one that wasnt near the front or end of the plane.
 
-## Question 6: Passing Through Customs 
+## Question 6: Custom Customs
 Themes: String Manipulation (gsub), Hash
 
 ### Part 1
@@ -74,7 +74,7 @@ Solution: Split input into groups, flatten each group into a single line, count 
 Prompt: Count the number of questions types answered by EVERY member of the group
 Solution: Use a Seen Hash mapping the question type to an array of people that have answered it. Fill the Seen hash, count the hash entries where the value length equals the group size.
 
-## Question 7: Bags containing Bags
+## Question 7: Handy Haversacks
 Themes: Regex, Hash, Recursion
 
 ### Part 1
